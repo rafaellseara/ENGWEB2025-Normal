@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .w3-container
+    h1.w3-center.w3-padding-16 Eurovisão - Edições
+    table.w3-table-all.w3-hoverable
+      thead
+        tr.w3-teal
+          th ID
+          th Ano
+          th Organizador
+          th Vencedor
+      tbody
+        each ed in edicoes
+          tr
+            td
+              a(href=`/${ed.anoEdicao}`)= ed.anoEdicao
+            td= ed.anoEdicao
+            td
+              a(href=`/paises/${ed.organizador}`)= ed.organizador
+            td
+              a(href=`/paises/${ed.vencedor}`)= ed.vencedor

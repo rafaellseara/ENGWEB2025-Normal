@@ -1,0 +1,16 @@
+
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    depends_on:
+      - mongo-seed
+
+  mongo-seed:
+    image: mongo:latest
+    volumes:
+      - /Users/rafaellseara/Documents/Universidade/EW/ENGWEB2025-Normal/dataset.json:/datasets/dataset.json
+    command: mongoimport --host mongodb -d eurovisao -c edicoes --type json --file /datasets/dataset.json --jsonArray

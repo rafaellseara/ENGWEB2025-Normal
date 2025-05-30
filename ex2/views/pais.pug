@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  .w3-container
+    h1.w3-center.w3-padding-16 País: #{pais}
+
+    h2.w3-padding-8 Participações como intérprete
+    table.w3-table-all.w3-hoverable
+      thead
+        tr.w3-teal
+          th Edição
+          th Ano
+          th Música
+          th Intérprete
+          th Venceu?
+      tbody
+        each p in participacoes
+          tr
+            td
+              a(href=`/${p.id}`)= p.id
+            td= p.ano
+            td= p.titulo
+            td= p.interprete
+            td= p.venceu ? 'Sim' : 'Não'
+
+    h2.w3-padding-8 Edições organizadas
+    table.w3-table-all.w3-hoverable
+      thead
+        tr.w3-teal
+          th Edição
+          th Ano
+      tbody
+        each ano in organizou
+          tr
+            td
+              a(href=`/${ano}`)= ano
+            td= ano
+
+    p
+      a.w3-button.w3-blue(href='/') Voltar à principal
