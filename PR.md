@@ -1,4 +1,6 @@
-# Exercício 1.1: Preparação do Dataset
+Para executar tudo apenas precisa, na raiz do `docker-compose.yml`, correr `docker-compose up -d` para o MongoDB e o seed; depois, noutros terminais, ir às pastas da API (porta 25000) e do serviço Pug (porta 25001), instalar dependências com `npm install` e arrancar cada serviço com `npm start`.
+
+# Exercício 1.1: Preparação do Dataset 
 
 1. **Dataset preparado e transformado**  
    - Convertido o JSON original num array de documentos com `_id` numérico (ano da edição).  
