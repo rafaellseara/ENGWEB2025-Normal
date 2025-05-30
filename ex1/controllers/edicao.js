@@ -4,6 +4,7 @@ exports.getAll = async (req, res) => {
   const filter = req.query.org ? { organizacao: req.query.org } : {};
   const docs = await Edicao.find(filter)
     .select('anoEdicao organizacao vencedor')
+    .sort({ _id: 1 })
     .lean();
   const result = docs.map(d => ({
     anoEdicao: d.anoEdicao,

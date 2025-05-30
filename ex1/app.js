@@ -12,10 +12,7 @@ app.use('/', indexRouter);
 
 // Conexão ao MongoDB
 dbUri = 'mongodb://localhost:27017/eurovisao';
-mongoose.connect(dbUri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect(dbUri);
 
 mongoose.connection
   .on('error', console.error.bind(console, 'MongoDB connection error:'))

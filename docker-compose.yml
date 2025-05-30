@@ -1,4 +1,3 @@
-
 version: '3.8'
 
 services:
@@ -12,5 +11,12 @@ services:
   mongo-seed:
     image: mongo:latest
     volumes:
-      - /Users/rafaellseara/Documents/Universidade/EW/ENGWEB2025-Normal/dataset.json:/datasets/dataset.json
-    command: mongoimport --host mongodb -d eurovisao -c edicoes --type json --file /datasets/dataset.json --jsonArray
+      - ./dataset_clean.json:/datasets/dataset.json
+    command: >
+      mongoimport
+        --host mongodb
+        -d eurovisao
+        -c edicoes
+        --type json
+        --file /datasets/dataset.json
+        --jsonArray
